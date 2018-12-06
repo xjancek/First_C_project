@@ -237,6 +237,41 @@ void h(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
     }
     i=0;
 
+    *zaznam_act = *zaznam_zac;
+    while (*zaznam_act != NULL) {
+
+        sprintf(pom_znacka, "%s", (*zaznam_act)->znacka);
+        k = atoi((*zaznam_act)-> cena);
+
+
+        while (pom_znacka[i]) {
+            if (pom_znacka[i] >= 'a' && pom_znacka[i] <= 'z')
+                pom_znacka[i] = pom_znacka[i] - 32;
+            i++;
+        }
+        i = 0;
+
+        cmp = strcmp(znacka, pom_znacka);
+
+        if ( (k <= c) && (cmp == 0)){
+
+            printf("%d.\n", counter);
+            printf("kategoria: %s\n", (*zaznam_act)->kategoria);
+            printf("znacka: %s\n", (*zaznam_act)->znacka);
+            printf("predajca: %s\n", (*zaznam_act)->predajca);
+            printf("cena: %s\n", (*zaznam_act)->cena);
+            printf("rok_vyroby: %s\n", (*zaznam_act)->rok_vyroby);
+            printf("stav_vozidla: %s\n", (*zaznam_act)->stav_vozidla);
+            counter++;
+
+        }
+
+        *zaznam_act = (*zaznam_act)->next;
+    }
+
+    if (counter == 1)
+        printf("V ponuke nie su pozadovane auta\n");
+
 }
 
 //---------------------------------------------------------------------
