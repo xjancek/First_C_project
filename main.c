@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct zaznam {
     char kategoria[51];
@@ -156,6 +157,65 @@ void p(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
     }
 
     *poc_zaznamov = *poc_zaznamov+1;
+
+}
+
+//---------------------------------------------------------------------
+
+void z(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
+
+    char znacka[51], pom_znacka[51];
+    int counter=0, i=0;
+
+    struct zaznam *zaznam_pom;
+
+    scanf("%*c");
+    scanf("%[^\n]", znacka);
+
+    while(znacka[i]) {
+        if ( znacka[i] >= 'a' && znacka[i] <= 'z')
+            znacka[i] = znacka[i] - 32;
+        i++;
+    }
+    i=0;
+
+    *zaznam_act = *zaznam_zac;
+    zaznam_pom = *zaznam_zac;
+    while (*zaznam_act != NULL) {
+
+        sprintf(pom_znacka, "%s", (*zaznam_act)->znacka);
+
+        while (pom_znacka[i]) {
+            if (pom_znacka[i] >= 'a' && znacka[i] <= 'z')
+                pom_znacka[i] = pom_znacka[i] - 32;
+            i++;
+        }
+        i = 0;
+
+        if (strstr(pom_znacka, znacka) != NULL) {
+
+            if (*zaznam_zac == *zaznam_act){
+                *zaznam_zac = (*zaznam_zac)->next;
+                counter++;
+                *poc_zaznamov = *poc_zaznamov-1;
+                break;
+            }
+
+            while (zaznam_pom->next != *zaznam_act){
+                zaznam_pom = zaznam_pom->next;
+            }
+
+            zaznam_pom->next = (*zaznam_act)->next;
+
+            counter++;
+            *poc_zaznamov = *poc_zaznamov-1;
+        }
+
+        *zaznam_act = (*zaznam_act)->next;
+    }
+    (*zaznam_act) = NULL;
+
+    printf("vymazalo sa %d zaznamov\n", counter);
 
 }
 
