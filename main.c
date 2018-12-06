@@ -125,6 +125,38 @@ void p(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
     scanf("%*c");
     scanf("%[^\n]", zaznam_novy->stav_vozidla);
 
+    if (*poc_zaznamov == 0){
+        *zaznam_act = malloc(sizeof(struct zaznam));
+        *zaznam_zac = malloc(sizeof(struct zaznam));
+        *zaznam_zac = zaznam_novy;
+    }
+
+    if (p > *poc_zaznamov)
+        p = *poc_zaznamov+1;
+
+    *zaznam_act = *zaznam_zac;
+    while (*zaznam_act != NULL){
+
+        if (p==1)
+        {
+            zaznam_novy->next = *zaznam_zac;
+            *zaznam_zac = zaznam_novy;
+            break;
+        }
+
+        else if (counter == p-1){
+            zaznam_novy->next = (*zaznam_act)->next;
+            (*zaznam_act)->next = zaznam_novy;
+            break;
+        }
+
+        *zaznam_act = (*zaznam_act)->next;
+        counter++;
+
+    }
+
+    *poc_zaznamov = *poc_zaznamov+1;
+
 }
 
 //---------------------------------------------------------------------
