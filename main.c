@@ -235,6 +235,7 @@ int main() {
             case ('n'): n(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
             case ('v'): v(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
             case ('p'): p(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
+            case ('z'): z(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
         }
     }
 
