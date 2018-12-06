@@ -75,6 +75,15 @@ void n(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
     fclose(f);
 
 }
+
+//---------------------------------------------------------------------
+
+void v(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
+
+    
+
+}
+
 //---------------------------------------------------------------------
 
 int main() {
