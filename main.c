@@ -14,7 +14,21 @@ struct zaznam {
 
 void n(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
 
-    
+    FILE *f;
+    char pole[201];
+    int poc_zaznam=0;
+
+    if ((f = fopen("auta.txt", "r")) == NULL) {           //otvorí súbor a skontroluje či sa správne otovoril
+        printf("something is wrong\n");
+        return;
+    }
+
+    while ((fgets(pole, sizeof(pole), f)) != NULL) {            //spočíta počet záznamov v súbore
+
+        if (pole[0] == '$'){
+            poc_zaznam++;}
+    }
+    *poc_zaznamov = poc_zaznam;
 
 }
 //---------------------------------------------------------------------
