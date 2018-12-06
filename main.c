@@ -292,6 +292,39 @@ void a(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
     }
     i=0;
 
+    *zaznam_act = *zaznam_zac;
+    while (*zaznam_act != NULL) {
+
+        sprintf(pom_znacka, "%s", (*zaznam_act)->znacka);
+        k = atoi((*zaznam_act)-> rok_vyroby);
+        cena = atoi((*zaznam_act)-> cena);
+
+
+        while (pom_znacka[i]) {
+            if (pom_znacka[i] >= 'a' && pom_znacka[i] <= 'z')
+                pom_znacka[i] = pom_znacka[i] - 32;
+            i++;
+        }
+        i = 0;
+
+        cmp = strcmp(znacka, pom_znacka);
+
+        if ( (k == c) && (cmp == 0)){
+
+            cena = cena-100;
+            if (cena < 0)
+                cena = 0;
+            sprintf((*zaznam_act)->cena, "%d", cena);
+
+            counter++;
+
+        }
+
+        *zaznam_act = (*zaznam_act)->next;
+    }
+
+    printf("Aktualizovalo sa %d zaznamov\n", counter);
+
 }
 
 //---------------------------------------------------------------------
