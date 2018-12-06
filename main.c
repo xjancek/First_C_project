@@ -10,6 +10,15 @@ struct zaznam {
     struct zaznam *next;
 };
 
+//---------------------------------------------------------------------
+
+void n(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
+
+    
+
+}
+//---------------------------------------------------------------------
+
 int main() {
 
     char c=0;
