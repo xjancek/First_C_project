@@ -163,7 +163,20 @@ void p(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
 
 void z(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
 
-    
+    char znacka[51], pom_znacka[51];
+    int counter=0, i=0;
+
+    struct zaznam *zaznam_pom;
+
+    scanf("%*c");
+    scanf("%[^\n]", znacka);
+
+    while(znacka[i]) {
+        if ( znacka[i] >= 'a' && znacka[i] <= 'z')
+            znacka[i] = znacka[i] - 32;
+        i++;
+    }
+    i=0;
 
 }
 
