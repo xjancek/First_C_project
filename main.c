@@ -364,6 +364,7 @@ int main() {
             case ('z'): z(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
             case ('h'): h(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
             case ('a'): a(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
+            case ('k'): k(&zaznam_zac, &zaznam_act, &poc_zaznamov);return 0;
         }
     }
 
