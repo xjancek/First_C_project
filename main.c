@@ -329,6 +329,14 @@ void a(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
 
 //---------------------------------------------------------------------
 
+void k(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
+
+    
+
+}
+
+//---------------------------------------------------------------------
+
 int main() {
 
     char c=0;
