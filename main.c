@@ -88,7 +88,7 @@ int main() {
         scanf("%c", &c);
 
         switch (c){
-
+            case ('n'): n(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
         }
     }
 
