@@ -104,7 +104,26 @@ void v(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
 
 void p(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
 
-    
+    struct zaznam *zaznam_novy;
+    int counter=1, p=0;
+
+    scanf("%d", &p);
+
+
+    zaznam_novy = malloc(sizeof(struct zaznam));
+
+    scanf("%*c");
+    scanf("%[^\n]", zaznam_novy->kategoria);
+    scanf("%*c");
+    scanf("%[^\n]", zaznam_novy->znacka);
+    scanf("%*c");
+    scanf("%[^\n]", zaznam_novy->predajca);
+    scanf("%*c");
+    scanf("%[^\n]", zaznam_novy->cena);
+    scanf("%*c");
+    scanf("%[^\n]", zaznam_novy->rok_vyroby);
+    scanf("%*c");
+    scanf("%[^\n]", zaznam_novy->stav_vozidla);
 
 }
 
