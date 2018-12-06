@@ -102,6 +102,14 @@ void v(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
 
 //---------------------------------------------------------------------
 
+void p(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
+
+    
+
+}
+
+//---------------------------------------------------------------------
+
 int main() {
 
     char c=0;
