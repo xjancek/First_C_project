@@ -331,7 +331,17 @@ void a(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
 
 void k(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
 
-    
+    if (*poc_zaznamov != 0){
+
+        *zaznam_act = (*zaznam_zac)->next;
+        while (*zaznam_act != NULL) {
+
+            free(*zaznam_zac);
+            *zaznam_zac = *zaznam_act;
+            *zaznam_act = (*zaznam_act)->next;
+        }
+
+    }
 
 }
 
