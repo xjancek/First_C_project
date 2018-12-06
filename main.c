@@ -114,6 +114,7 @@ int main() {
 
         switch (c){
             case ('n'): n(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
+            case ('v'): v(&zaznam_zac, &zaznam_act, &poc_zaznamov);break;
         }
     }
 
