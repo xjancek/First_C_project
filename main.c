@@ -75,6 +75,31 @@ void n(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov
     fclose(f);
 
 }
+
+//---------------------------------------------------------------------
+
+void v(struct zaznam **zaznam_zac, struct zaznam **zaznam_act, int *poc_zaznamov){
+
+    int counter = 1;
+
+    *zaznam_act = *zaznam_zac;
+
+    while (*zaznam_act != NULL){
+        if (counter == *poc_zaznamov+1)
+            break;
+        printf("%d.\n", counter);
+        printf("kategoria: %s\n", (*zaznam_act)->kategoria);
+        printf("znacka: %s\n", (*zaznam_act)->znacka);
+        printf("predajca: %s\n", (*zaznam_act)->predajca);
+        printf("cena: %s\n", (*zaznam_act)->cena);
+        printf("rok_vyroby: %s\n", (*zaznam_act)->rok_vyroby);
+        printf("stav_vozidla: %s\n", (*zaznam_act)->stav_vozidla);
+        *zaznam_act = (*zaznam_act)->next;
+        counter++;
+    }
+
+}
+
 //---------------------------------------------------------------------
 
 int main() {
