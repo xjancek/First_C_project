@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+struct zaznam {
+    char kategoria[51];
+    char znacka[51];
+    char predajca[101];
+    char cena[10];
+    char rok_vyroby[10];
+    char stav_vozidla[201];
+    struct zaznam *next;
+};
+
 int main() {
 
     char c=0;
@@ -11,7 +21,7 @@ int main() {
         scanf("%c", &c);
 
         switch (c){
-            
+
         }
     }
 
